@@ -10,14 +10,14 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./:/app
+      - .:/app
 
-  postgres_service:
-    image: postgres:14
-    container_name: psql-db
+  postgres:
+    image: postgres:latest
+    container_name: psql-d
     environment:
-      POSTGRES_DB: LipSumGenerator
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: workshop
     ports:
-      - "5434:5432"
+      - "5432:5432"
